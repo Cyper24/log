@@ -1,0 +1,17 @@
+{% extends "header.html" %}
+{% load socialaccount %}
+{% block content %}
+<div class="section-title">
+				<h2>Login</h2>
+			</div><br>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-primary float-left">Login</button>
+</form><br>
+ <br>
+<a href="{% provider_login_url 'google' %}">Log In with Gmail</a><br>
+
+<strong>-----OR----</strong><br>
+<h6><a href="{% url 'account_signup' %}">Daftar</a><br></h6>
+{% endblock %}
